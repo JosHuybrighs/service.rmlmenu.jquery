@@ -1,0 +1,333 @@
+﻿/*
+ * The following styles are for the large-screen horizontal navigation menu.
+ * Through javascript the 'main' <ul> tag will then be assigned class 'rmlmenu'.
+ */
+.rmlmenu {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+.rmlmenu li {
+  display:inline-block;
+  position:relative;
+  line-height: 1.5em;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  margin-bottom: 0;
+  margin-left: 2px; /* The left margin of any (except the first) top menuitem */
+}
+.rmlmenu li:first-child {
+  margin-left:0;
+}
+.rmlmenu li.rmlmenu-margin-xl {
+  margin-left:150px;
+}
+.rmlmenu li a {
+  text-decoration: none;
+  padding: 16px 10px 16px 10px;
+  display: block;
+  -webkit-transition:all 0.2s ease-in-out 0s;
+  -moz-transition:all 0.2s ease-in-out 0s;
+  -o-transition:all 0.2s ease-in-out 0s;
+  -ms-transition:all 0.2s ease-in-out 0s;
+  transition:all 0.2s ease-in-out 0s;
+  color: #494949; /* The text color of any menuitem that is not selected */
+  color: #162e5a; /* The text color of any menuitem that is not selected */
+  font-size: 1.0em; /* The size of the text of the top menuitems */
+}
+.rmlmenu li a:hover,
+.rmlmenu li:hover > a {
+  /* Style when one hovers over a top menuitem */
+  font-weight: normal;
+  color:#f65151;
+  color:#db4d4d;
+  color:#ffffff;
+  background: #074e68;
+  background: #008198;
+}
+.rmlmenu ul {
+  display:none;
+  margin:0;
+  padding:0;
+  width:150px;
+  width:220px;
+  position:absolute;
+  top:56px; /* Top position of 1st level submenu (should match with height of {rmlmenu li a} */
+  left:0;
+  z-index:50;
+  background:#ffffff;
+  border-bottom: 1px solid #c0c0c0; 
+}
+.rmlmenu ul li {
+  display:block;
+  float:none;
+  background:none;
+  margin: 0;
+  padding: 0;
+}
+.rmlmenu ul li a {
+  /* All child menuitems that are not selected */
+  display: block;
+  background: #BCC3FA;
+  background: #e6e5e6;
+  background: #333333;
+  background: #074e68;
+  background: #f7f7f1;
+  background: #ffffff;
+  color:#ffffff;  
+  color:#333333;
+  color:#162e5a;
+  font-size: 0.95em;
+  border-top: 1px solid #c0c0c0; 
+  border-left: 1px solid #c0c0c0; 
+  border-right: 1px solid #c0c0c0; 
+}
+.rmlmenu ul li a:not(:only-child) {
+  /* All child menuitems with submenu(s) that are not selected */
+  background: #ffffff url(./light-gray-arrow-right.png) no-repeat right center;
+}
+.rmlmenu ul li a:hover,
+.rmlmenu ul li:hover > a
+{
+  color:#db4d4d;
+  color:#ffffff;
+  color:#333333;
+  color: #061e4a;
+  background: #e0e0e0;
+  background: #d7d7d1;
+}
+.rmlmenu ul li:hover > a:not(:only-child) {
+  color:#db4d4d;
+  color:#333333;
+  color:#ffffff;
+  background: #d7d7d1 url(./light-blue-arrow-right.png) no-repeat right center;
+  background: #008198 url(./white-arrow-right.png) no-repeat right center;
+}
+.rmlmenu li:hover > ul {
+  display:block;
+}
+.rmlmenu ul ul {
+  left: 150px;
+  left: 219px;
+  top: 0px;
+}
+
+/*
+ * The following styles are used when the navigation menu is reduced to a popup menu.
+ * Through javascript the navigation container is assigned class 'rmlPopupPanel' and the
+ * main <ul> tag is assigned class 'rmlpopupmenu'.
+ */
+.rmlPopupPanel {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  height: 100%;
+  /* The background color and possible border of the whole popup: */
+  background: #383838;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.rmlPopupPanel h3 {
+  height: 54px;
+  margin: 0;
+  padding: 13px 15px 0px 15px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  font-size: 1.4em;
+  /* The background color, text color and possible bottom border of the top 'Menu' titel */
+  background: #005731;
+  background: #074e68;
+  color: #ffffff; 
+  border-bottom: 1px solid #686868;
+}
+
+.rmlMenuText {
+}
+
+.rmlpopupmenu {
+  display: block;
+  margin: 0;
+  padding: 0;
+  /* The width of the popup */
+  width: 260px;
+}
+.rmlpopupmenu li {
+  margin: 0;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.rmlpopupmenu li ul {
+  margin: 0;
+  padding: 0;
+}
+.rmlpopupmenu li a {
+  display: block;
+  text-decoration: none;
+  padding: 13px 13px 13px 15px;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+  /* The text color, background color and bottom border of any popup menuitem that is not selected */
+  color: #ffffff;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  font-size: 1.1em;
+  background: #383838;
+  border-bottom: 1px solid #686868;
+}
+.rmlpopupmenu li a:not(:only-child) {
+  /* The color here must match with the background color before */
+  background: #383838 url(./arrow-right.png) no-repeat right center;
+}
+.rmlpopupmenu li.rmlm-back a {
+  /* The background color, text color and possible bottom border of a 'Back' popup menuitem */
+  background:#2c2c2c;
+  background:#101010;
+  color:#ffffff; 
+  border-bottom:1px solid #606060;
+}
+.no-touch .rmlpopupmenu li:hover > a,
+.rmlpopupmenu li.touchStart > a {
+   /* The background color and text color of a popup menuitem when hovering over it */
+  color:#ffffff; 
+  background:#707070;
+}
+.no-touch .rmlpopupmenu li:hover > a:not(:only-child),
+.rmlpopupmenu li.touchStart > a:not(:only-child) {
+  /* The color here must match with the background color before */
+  background: #707070 url(./arrow-right.png) no-repeat right center;
+}
+.rmlpopupmenu ul li {
+  display:none;
+}
+/* 
+When a submenu is opened, we will hide all li siblings.
+For that we give a class to the parent menu called "dl-subview".
+We also hide the submenu link. 
+The opened submenu will get the class "dl-subviewopen".
+All this is done for any sub-level being entered.
+*/
+.rmlpopupmenu.dl-subview li,
+.rmlpopupmenu.dl-subview li.dl-subviewopen > a,
+.rmlpopupmenu.dl-subview li.dl-subview > a {
+	display: none;
+}
+
+.rmlpopupmenu.dl-subview li.dl-subview,
+.rmlpopupmenu.dl-subview li.dl-subview ul,
+.rmlpopupmenu.dl-subview li.dl-subviewopen,
+.rmlpopupmenu.dl-subview li.dl-subviewopen > ul,
+.rmlpopupmenu.dl-subview li.dl-subviewopen > ul > li {
+	display: block;
+}
+
+/*
+ * The following styles are for an optional sticky add-on menu
+ */
+.rmlpopupmenu-addon {
+  margin-left: 15px;
+  padding: 0;
+}
+.rmlpopupmenu-addon li {
+  padding: 5px;
+  display:block;
+  width: 170px;
+  text-align: center;
+  background: #404040;
+  background: #db4d4d; /* The background of any popup menuitem that is not selected */
+}
+.rmlpopupmenu-addon li a {
+  text-decoration:none;
+  padding: 7px;
+  font-size: 0.9em;
+  color:#ffffff; /* The text color of any popup menuitem that is not selected */
+  -webkit-transition:all 0.2s ease-in-out 0s;
+  -moz-transition:all 0.2s ease-in-out 0s;
+  -o-transition:all 0.2s ease-in-out 0s;
+  -ms-transition:all 0.2s ease-in-out 0s;
+  transition:all 0.2s ease-in-out 0s;
+}
+.no-touch .rmlpopupmenu-addon li:hover,
+.rmlpopupmenu-addon li.hover {
+  background:#707070; /* The background color of a popup menuitem when hovering over it */
+}
+
+
+/*
+ * The following styles handle a default popup menu button that is constructed using 3 'block' spans
+ * to show a 'hamburger' style menu button
+ */
+.rmlpopupmenu-button {
+  display: none;
+  float: right;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.rmlpopupmenu-button span {
+  color: #ffffff;
+  font-size: 2.9em;
+  display: block;
+  padding: 10px 10px 14px 10px;
+  width: 60px;
+}
+.no-touch .rmlpopupmenu-button span:hover {
+}
+.rmlpopupmenu-button span span {
+  padding: 0;
+  width: 40px;
+  height: 6px;
+  margin: 4px 0px 0px 0px;
+  float: none;
+  background: #ffffff;
+  background: #333333;
+}
+
+/*
+ * The following styles handle a popup menu button that contains text
+ */
+.rmlpopupmenuButtonText {
+  margin: 10px 0 0 0;
+  padding: 0.6em 0.8em 0.7em 0.8em;
+  line-height: 1.0em;
+  font-family: "Ubuntu", sans-serif;
+  color: #ffffff;
+  background: #333333; 
+  vertical-align: top;
+  border: none;
+  text-align: center;
+  font-weight: normal; 
+  cursor: pointer;
+}
+.rmlpopupmenuButtonText:hover,
+.rmlpopupmenuButtonText.touchStart
+{
+  color: #ffffff;
+  background: #074e68;
+  background: #008198;
+}
+
+
+/*
+ * Popup menu is enabled on small screens
+ */
+@media only screen {
+  .rmlmenu {
+    display: none;
+  }
+  .rmlpopupmenuButton,
+  .rmlpopupmenuButtonText {
+    display: block;
+  }
+}
+/*
+ * Full menu is enabled on screens of 1024 pixels and higher
+ */
+@media only screen and (min-width: 64em) {
+  .rmlmenu {
+    display: block;
+  }
+  .rmlpopupmenuButton,
+  .rmlpopupmenuButtonText {
+    display: none;
+  }
+}
