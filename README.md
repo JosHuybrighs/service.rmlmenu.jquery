@@ -1,4 +1,4 @@
-##service.rmlmenu.jquery
+##service.rmlmenu.jquery - Responsive multi-level menu
 
 ###Description
 
