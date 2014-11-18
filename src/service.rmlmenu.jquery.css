@@ -8,10 +8,10 @@
   padding: 0;
 }
 .rmlmenu li {
-  display:inline-block;
-  position:relative;
+  display: inline-block;
+  position: relative;
   line-height: 1.5em;
-  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   margin-bottom: 0;
   margin-left: 2px; /* The left margin of any (except the first) top menuitem */
 }
@@ -19,18 +19,16 @@
   margin-left:0;
 }
 .rmlmenu li.rmlmenu-margin-xl {
-  margin-left:150px;
+  margin-left: 150px;
 }
 .rmlmenu li a {
   text-decoration: none;
   padding: 16px 10px 16px 10px;
   display: block;
-  -webkit-transition:all 0.2s ease-in-out 0s;
-  -moz-transition:all 0.2s ease-in-out 0s;
-  -o-transition:all 0.2s ease-in-out 0s;
-  -ms-transition:all 0.2s ease-in-out 0s;
-  transition:all 0.2s ease-in-out 0s;
-  color: #494949; /* The text color of any menuitem that is not selected */
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
   color: #162e5a; /* The text color of any menuitem that is not selected */
   font-size: 1.0em; /* The size of the text of the top menuitems */
 }
@@ -38,24 +36,21 @@
 .rmlmenu li:hover > a {
   /* Style when one hovers over a top menuitem */
   font-weight: normal;
-  color:#f65151;
-  color:#db4d4d;
-  color:#ffffff;
-  background: #074e68;
-  background: #008198;
+  color: #fff;
+  background: #497981;
 }
 .rmlmenu ul {
-  display:none;
-  margin:0;
-  padding:0;
-  width:150px;
-  width:220px;
-  position:absolute;
-  top:56px; /* Top position of 1st level submenu (should match with height of {rmlmenu li a} */
-  left:0;
-  z-index:50;
-  background:#ffffff;
-  border-bottom: 1px solid #c0c0c0; 
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  width: 220px;
+  position: absolute;
+  top: 56px; /* Top position of 1st level submenu (should match with height of {rmlmenu li a} */
+  left: 0;
+  z-index: 50;
+  background: #fff;
+  border-bottom: 1px solid #c0c0c0;  
 }
 .rmlmenu ul li {
   display:block;
@@ -67,15 +62,8 @@
 .rmlmenu ul li a {
   /* All child menuitems that are not selected */
   display: block;
-  background: #BCC3FA;
-  background: #e6e5e6;
-  background: #333333;
-  background: #074e68;
-  background: #f7f7f1;
-  background: #ffffff;
-  color:#ffffff;  
-  color:#333333;
-  color:#162e5a;
+  background: #f3f6f7;
+  color: #162e5a;
   font-size: 0.95em;
   border-top: 1px solid #c0c0c0; 
   border-left: 1px solid #c0c0c0; 
@@ -83,24 +71,17 @@
 }
 .rmlmenu ul li a:not(:only-child) {
   /* All child menuitems with submenu(s) that are not selected */
-  background: #ffffff url(./light-gray-arrow-right.png) no-repeat right center;
+  background: #f3f6f7 url(./light-gray-arrow-right.png) no-repeat right center;
 }
 .rmlmenu ul li a:hover,
 .rmlmenu ul li:hover > a
 {
-  color:#db4d4d;
-  color:#ffffff;
-  color:#333333;
-  color: #061e4a;
-  background: #e0e0e0;
-  background: #d7d7d1;
+  color: #fff;
+  background: #497981;
 }
 .rmlmenu ul li:hover > a:not(:only-child) {
-  color:#db4d4d;
-  color:#333333;
-  color:#ffffff;
-  background: #d7d7d1 url(./light-blue-arrow-right.png) no-repeat right center;
-  background: #008198 url(./white-arrow-right.png) no-repeat right center;
+  color: #fff;
+  background: #497981 url(./white-arrow-right.png) no-repeat right center;
 }
 .rmlmenu li:hover > ul {
   display:block;
@@ -108,7 +89,7 @@
 .rmlmenu ul ul {
   left: 150px;
   left: 219px;
-  top: 0px;
+  top: 0;
 }
 
 /*
@@ -135,9 +116,8 @@
   font-weight: 300;
   font-size: 1.4em;
   /* The background color, text color and possible bottom border of the top 'Menu' titel */
-  background: #005731;
   background: #074e68;
-  color: #ffffff; 
+  color: #fff; 
   border-bottom: 1px solid #686868;
 }
 
@@ -166,10 +146,9 @@
   -webkit-transition: all 0.2s ease-in-out 0s;
   -moz-transition: all 0.2s ease-in-out 0s;
   -o-transition: all 0.2s ease-in-out 0s;
-  -ms-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
   /* The text color, background color and bottom border of any popup menuitem that is not selected */
-  color: #ffffff;
+  color: #fff;
   font-family: 'Ubuntu', sans-serif;
   font-weight: 300;
   font-size: 1.1em;
@@ -182,24 +161,23 @@
 }
 .rmlpopupmenu li.rmlm-back a {
   /* The background color, text color and possible bottom border of a 'Back' popup menuitem */
-  background:#2c2c2c;
-  background:#101010;
-  color:#ffffff; 
-  border-bottom:1px solid #606060;
+  background: #101010;
+  color: #fff; 
+  border-bottom: 1px solid #606060;
 }
 .no-touch .rmlpopupmenu li:hover > a,
 .rmlpopupmenu li.touchStart > a {
    /* The background color and text color of a popup menuitem when hovering over it */
-  color:#ffffff; 
-  background:#707070;
+  color: #fff; 
+  background: #707070;
 }
 .no-touch .rmlpopupmenu li:hover > a:not(:only-child),
 .rmlpopupmenu li.touchStart > a:not(:only-child) {
   /* The color here must match with the background color before */
-  background: #707070 url(./arrow-right.png) no-repeat right center;
+  background-image: url(./arrow-right.png) no-repeat right center;
 }
 .rmlpopupmenu ul li {
-  display:none;
+  display: none;
 }
 /* 
 When a submenu is opened, we will hide all li siblings.
@@ -223,45 +201,13 @@ All this is done for any sub-level being entered.
 }
 
 /*
- * The following styles are for an optional sticky add-on menu
- */
-.rmlpopupmenu-addon {
-  margin-left: 15px;
-  padding: 0;
-}
-.rmlpopupmenu-addon li {
-  padding: 5px;
-  display:block;
-  width: 170px;
-  text-align: center;
-  background: #404040;
-  background: #db4d4d; /* The background of any popup menuitem that is not selected */
-}
-.rmlpopupmenu-addon li a {
-  text-decoration:none;
-  padding: 7px;
-  font-size: 0.9em;
-  color:#ffffff; /* The text color of any popup menuitem that is not selected */
-  -webkit-transition:all 0.2s ease-in-out 0s;
-  -moz-transition:all 0.2s ease-in-out 0s;
-  -o-transition:all 0.2s ease-in-out 0s;
-  -ms-transition:all 0.2s ease-in-out 0s;
-  transition:all 0.2s ease-in-out 0s;
-}
-.no-touch .rmlpopupmenu-addon li:hover,
-.rmlpopupmenu-addon li.hover {
-  background:#707070; /* The background color of a popup menuitem when hovering over it */
-}
-
-
-/*
  * The following styles handle a default popup menu button that is constructed using 3 'block' spans
  * to show a 'hamburger' style menu button
  */
 .rmlpopupmenu-button {
   display: none;
   float: right;
-  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .rmlpopupmenu-button span {
   color: #ffffff;
@@ -276,9 +222,8 @@ All this is done for any sub-level being entered.
   padding: 0;
   width: 40px;
   height: 6px;
-  margin: 4px 0px 0px 0px;
+  margin: 4px 0 0 0;
   float: none;
-  background: #ffffff;
   background: #333333;
 }
 
@@ -290,8 +235,8 @@ All this is done for any sub-level being entered.
   padding: 0.6em 0.8em 0.7em 0.8em;
   line-height: 1.0em;
   font-family: "Ubuntu", sans-serif;
-  color: #ffffff;
-  background: #333333; 
+  color: #fff;
+  background: #333; 
   vertical-align: top;
   border: none;
   text-align: center;
@@ -301,8 +246,7 @@ All this is done for any sub-level being entered.
 .rmlpopupmenuButtonText:hover,
 .rmlpopupmenuButtonText.touchStart
 {
-  color: #ffffff;
-  background: #074e68;
+  color: #fff;
   background: #008198;
 }
 

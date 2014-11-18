@@ -4,7 +4,8 @@
  * traditional 'horizontal' multi-level menu on 'bigger' screens to a popup dropdown menu on smaller
  * screens.
  *
- * Version 1.0.0
+ * Version 1.0.1
+ * Changes: - Better support for touch devices by using the ontouchclick plugin for event handling.
  *
  * Developer: Jos Huybrighs
  *
@@ -19,7 +20,7 @@
  * http://www.opensource.org/licenses/mit-license.php
  *
  ******************************************************************************************************/
-;(function ($, win, undefined) {
+(function ($, win, undefined) {
 
     $.RMLMenu = function(element, options) {
         // Get the main element
@@ -111,7 +112,7 @@
             this.back.ontouchclick(function (event) {
                 // Back item clicked
                 if (self.isOpen) {
-					$this = $(event.currentTarget)
+                    $this = $(event.currentTarget);
 					var submenu = $this.parents('ul:first');
 					var item = submenu.parent();
 					item.removeClass('dl-subviewopen');
