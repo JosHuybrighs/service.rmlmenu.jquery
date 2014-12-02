@@ -2,11 +2,13 @@
  * The following styles are for the large-screen horizontal navigation menu.
  * Through javascript the 'main' <ul> tag will then be assigned class 'rmlmenu'.
  */
+
 .rmlmenu {
   float: right;
   margin: 0;
   padding: 0;
 }
+
 .rmlmenu li {
   display: inline-block;
   position: relative;
@@ -116,7 +118,7 @@
   font-weight: 300;
   font-size: 1.4em;
   /* The background color, text color and possible bottom border of the top 'Menu' titel */
-  background: #074e68;
+  background: #497981;
   color: #fff; 
   border-bottom: 1px solid #686868;
 }
@@ -143,10 +145,6 @@
   display: block;
   text-decoration: none;
   padding: 13px 13px 13px 15px;
-  -webkit-transition: all 0.2s ease-in-out 0s;
-  -moz-transition: all 0.2s ease-in-out 0s;
-  -o-transition: all 0.2s ease-in-out 0s;
-  transition: all 0.2s ease-in-out 0s;
   /* The text color, background color and bottom border of any popup menuitem that is not selected */
   color: #fff;
   font-family: 'Ubuntu', sans-serif;
@@ -174,7 +172,7 @@
 .no-touch .rmlpopupmenu li:hover > a:not(:only-child),
 .rmlpopupmenu li.touchStart > a:not(:only-child) {
   /* The color here must match with the background color before */
-  background-image: url(./arrow-right.png) no-repeat right center;
+  background: #707070 url(./arrow-right.png) no-repeat right center;
 }
 .rmlpopupmenu ul li {
   display: none;
@@ -247,7 +245,7 @@ All this is done for any sub-level being entered.
 .rmlpopupmenuButtonText.touchStart
 {
   color: #fff;
-  background: #008198;
+  background: #497981;
 }
 
 

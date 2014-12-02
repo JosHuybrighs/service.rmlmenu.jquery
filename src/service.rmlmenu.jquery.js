@@ -20,13 +20,16 @@
  * http://www.opensource.org/licenses/mit-license.php
  *
  ******************************************************************************************************/
-(function ($, win, undefined) {
+;(function ($, win, undefined) {
 
     $.RMLMenu = function(element, options) {
         // Get the main element
         this.div_el = $(element);
         // Get the main <ul> element
         this.ul_el = $(element).children(":first");
+        // Set list style for all <li>'s to 'none' (otherwise problem with IE10,11)
+        // It is not possible to fix this in the CSS file! Strange!
+        this.ul_el.find("li").css("list-style", "none");
         this._init(options);
     };
 
@@ -202,9 +205,7 @@
             }
             else {
                 this.div_el.show();
-                //                this._openForTouch();
             }
-
             var bttnElem = $(this.settings.pMenuBttn);
             bttnElem.ontouchclick(function (e) {
                 // Open/close menu
