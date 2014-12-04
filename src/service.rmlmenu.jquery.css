@@ -35,7 +35,8 @@
   font-size: 1.0em; /* The size of the text of the top menuitems */
 }
 .rmlmenu li a:hover,
-.rmlmenu li:hover > a {
+.rmlmenu li:hover > a,
+.rmlmenu li.hover > a {
   /* Style when one hovers over a top menuitem */
   font-weight: normal;
   color: #fff;
@@ -45,8 +46,7 @@
   display: none;
   margin: 0;
   padding: 0;
-  width: 150px;
-  width: 220px;
+  width: 170px; /* Width of a submenu popup */
   position: absolute;
   top: 56px; /* Top position of 1st level submenu (should match with height of {rmlmenu li a} */
   left: 0;
@@ -76,21 +76,23 @@
   background: #f3f6f7 url(./light-gray-arrow-right.png) no-repeat right center;
 }
 .rmlmenu ul li a:hover,
-.rmlmenu ul li:hover > a
+.rmlmenu ul li:hover > a,
+.rmlmenu ul li.hover > a
 {
   color: #fff;
   background: #497981;
 }
-.rmlmenu ul li:hover > a:not(:only-child) {
+.rmlmenu ul li:hover > a:not(:only-child),
+.rmlmenu ul li.hover > a:not(:only-child) {
   color: #fff;
   background: #497981 url(./white-arrow-right.png) no-repeat right center;
 }
-.rmlmenu li:hover > ul {
+.rmlmenu li:hover > ul,
+.rmlmenu li.hover > ul {
   display:block;
 }
 .rmlmenu ul ul {
-  left: 150px;
-  left: 219px;
+  left: 169px; /* Left position of 2nd-level popup in relation to 1st-level */
   top: 0;
 }
 

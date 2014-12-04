@@ -35,30 +35,58 @@
 
     $.RMLMenu.prototype = {
 
-        _openForTouch: function() {
-            if ( ('ontouchstart' in window) ||
-			     navigator.msMaxTouchPoints ||
-			     navigator.userAgent.toLowerCase().match(/windows phone os 7/i)) {
-                this.submenus = $('li:has(ul)', this.ul_el);
-                var curItem = false;
-                this.submenus.on('click', function (e) {
+        _constructMenu: function () {
+            this.curItem = false;
+            var self = this;
+            var menuitems = $('li:has(ul)', this.ul_el);
+            if ((window.ontouchstart === undefined) &&
+                !window.navigator.msMaxTouchPoints &&
+                !window.navigator.userAgent.toLowerCase().match(/windows phone os 7/i)) {
+                // Mouse is used
+            }
+            else {
+                menuitems.on('click', function (e) {
+                    // Touch device is used
+                    // Check if first click on an <li> with a submenu
+                    var isSet = false;
                     var item = $(this);
-                    if (item[0] != curItem[0]) {
-                        e.preventDefault();
-                        curItem = item;
+                    if (item[0] !== self.curItem[0]) {
+//                        e.preventDefault();
+                        self.curItem = item;
+                        isSet = true;
                     }
+//                    self.settings.onTrace((isSet ? 'Menu: keep ' : 'Menu: set ') + '[' + item.find('a:first').text() + ']');
                 });
                 $(document).on('click touchstart MSPointerDown', function (e) {
+                    // Open navigation
                     var resetItem = true;
                     var parents = $(e.target).parents();
-                    for (var i = 0; i < parents.length; i++) {
-                        if (parents[i] == curItem[0]) {
-                            curItem = false;
+                    for (i = 0; i < parents.length; i++) {
+                        if (parents[i] === self.curItem[0]) {
+                            resetItem = false;
                             break;
                         }
                     }
+//                    self.settings.onTrace(resetItem ? 'Doc: reset' : 'Doc: keep');
+                    if (resetItem) {
+                        self.curItem = false;
+                    }
                 });
+
             }
+            this.div_el.show();
+        },
+
+        _destructMenu: function () {
+            if ((window.ontouchstart === undefined) &&
+                !window.navigator.msMaxTouchPoints &&
+                !window.navigator.userAgent.toLowerCase().match(/windows phone os 7/i)) {
+                // Mouse is used
+                return;
+            }
+            $(document).off();
+            var menuitems = this.ul_el.find('li');
+            menuitems.off();
         },
 
         _openPopupMenu: function () {
@@ -194,7 +222,9 @@
                 // Callback: called when popup menu is constructed
                 onPopupMenuOpen: function() { return false; },
                 // Callback: called when popup menu is destructed
-                onPopupMenuClose: function() { return false; }
+                onPopupMenuClose: function () { return false; },
+                // Callback: only used for testing the plugin 
+                onTrace: function (msg) { return false; },
             };
             this.settings = $.extend(defaults, options || {});
 
@@ -204,7 +234,7 @@
                 this._constructPopupMenu();
             }
             else {
-                this.div_el.show();
+                this._constructMenu();
             }
             var bttnElem = $(this.settings.pMenuBttn);
             bttnElem.ontouchclick(function (e) {
@@ -226,9 +256,10 @@
                     self.ul_el.attr('class', isPMenuBttnHidden ? 'rmlmenu' : 'rmlpopupmenu');
                     if (isPMenuBttnHidden) {
                         self._destroyPopupMenu();
-                        self.ul_el.show();
+                        self._constructMenu();
                     }
                     else {
+                        self._destructMenu();
                         self._constructPopupMenu();
                     }
                 };
