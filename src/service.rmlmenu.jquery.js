@@ -3,9 +3,16 @@
  * A multi-device navigation menu supporting multi-level menus. It automatically resizes from a
  * traditional 'horizontal' multi-level menu on 'bigger' screens to a popup dropdown menu on smaller
  * screens.
+ * 
+ * Version: 1.0.2
+ * 
+ * Change history:
  *
- * Version 1.0.1
- * Changes: - Better support for touch devices by using the ontouchclick plugin for event handling.
+ * Version 1.0.2 - Added corrections for horizontal menus on touch devices that are more than 1
+ *                 level deep. A click on a parent item would close the menu.
+ * Version 1.0.1 - Better support for touch devices by using the ontouchclick plugin for event
+ *                 handling.
+ * Version 1.0.0 - First version
  *
  * Developer: Jos Huybrighs
  *
